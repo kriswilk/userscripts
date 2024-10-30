@@ -2,7 +2,7 @@
 // @name         eBay - Hide Ads and Distractions
 // @description  Suppresses promotion carousels, financing offers, reviews and other unsolicited content at eBay.
 // @author       Kris Wilk
-// @version      0.1
+// @version      0.2
 //
 // @namespace    https://github.com/kriswilk/userscripts
 // @homepage     https://github.com/kriswilk/userscripts
@@ -40,26 +40,19 @@
 
   const selectors = [
     // LISTINGS
-    "[id^='placement']",       // promoted content
-    ".x-financing-info",       // financing
-    "#vas-container",          // insurance
-    ".d-payments-minview",     // payments
+    ".x-rx-slot",              // promoted content
+    ".x-rx-slot-btf",          // promoted content
+    ".x-financing-info",       // financing offer
+    ".d-payments-minview",     // financing offer
     ".x-shop-with-confidence", // money back guarantee
-    ".x-reviews",              // reviews
-    ".d-pagenavigation-btf",   // bottom navigation
-    ".ux-navigator",           // more to explore
-    ".x-seo-footer",           // top sellers, highly rated products
-    ".x-seo-related-search",   // related searches
-    ".footer-panel-container", // footer
+    ".x-evo-btf-river",        // content below item description
 
     // SEARCH RESULTS
     ".srp-river-answer",       // picked for you
     ".srp-main-below-river",   // related searches, recently viewed
-    ".x-footer",               // footer
 
     // OTHER
     ".m-product-tour",         // feature notices
-    ".global-footer",          // footer
   ].join();
 
   const callback = () => document.querySelectorAll(selectors).forEach(e => { e.style.display = 'none' });
