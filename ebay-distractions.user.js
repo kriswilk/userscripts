@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         eBay - Hide Ads and Distractions
-// @description  Suppresses promotion carousels, financing offers, reviews and other unsolicited content at eBay.
+// @description  Suppresses sponsored/promoted items, financing offers, reviews and other unsolicited content at eBay.
 // @author       Kris Wilk
-// @version      0.2
+// @version      0.3
 //
 // @namespace    https://github.com/kriswilk/userscripts
 // @homepage     https://github.com/kriswilk/userscripts
@@ -47,7 +47,7 @@
     ".x-shop-with-confidence", // money back guarantee
     ".x-evo-btf-river",        // content below item description
 
-    // SEARCH RESULTS
+    // SEARCH
     ".srp-river-answer",       // picked for you
     ".srp-main-below-river",   // related searches, recently viewed
 
