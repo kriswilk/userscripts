@@ -2,7 +2,7 @@
 // @name         eBay - Hide Ads and Distractions
 // @description  Suppresses sponsored/promoted items, financing offers, reviews and other unsolicited content at eBay.
 // @author       Kris Wilk
-// @version      0.3
+// @version      0.4
 //
 // @namespace    https://github.com/kriswilk/userscripts
 // @homepage     https://github.com/kriswilk/userscripts
