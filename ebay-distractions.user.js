@@ -48,8 +48,8 @@
     ".x-evo-btf-river",        // content below item description
 
     // SEARCH
-    ".srp-river-answer",       // picked for you
-    ".srp-main-below-river",   // related searches, recently viewed
+    ".srp-river-answer[class*='CAROUSEL']:not([class*='NAVIGATION']",  // picked for you
+    ".srp-main-below-river",                                           // related searches, recently viewed
 
     // OTHER
     ".m-product-tour",         // feature notices
