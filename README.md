@@ -1,4 +1,6 @@
-### eBay - Hide Ads and Distractions
+# userscripts
+
+### eBay - Hide Ads and Annoyances
 Suppresses promotion carousels, financing offers, reviews and other unsolicited content at eBay.
 
-[Download / Install](https://raw.githubusercontent.com/kriswilk/userscripts/main/ebay-distractions.user.js)
+[Download / Install](https://kriswilk.github.io/userscripts/ebay-distractions.user.js)
