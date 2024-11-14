@@ -2,12 +2,12 @@
 // @name         eBay - Hide Ads and Distractions
 // @description  Suppresses sponsored/promoted items, financing offers, reviews and other unsolicited content at eBay.
 // @author       Kris Wilk
-// @version      0.4
+// @version      1.0
 //
 // @namespace    https://github.com/kriswilk/userscripts
 // @homepage     https://github.com/kriswilk/userscripts
-// @downloadURL  https://raw.githubusercontent.com/kriswilk/userscripts/main/ebay-distractions.user.js
 // @supportURL   https://github.com/kriswilk/userscripts/issues
+// @downloadURL  https://kriswilk.github.io/userscripts/ebay.ads-distractions.user.js
 //
 // @match        https://*.ebay.at/*
 // @match        https://*.ebay.be/*
@@ -29,8 +29,8 @@
 // @match        https://*.ebay.ph/*
 //
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=ebay.com
-// @grant        none
-// @run-at       document-start
+//
+// @grant        GM_addStyle
 // ==/UserScript==
 
 /* eslint-disable no-multi-spaces */
@@ -40,6 +40,7 @@
 
   const selectors = [
     // LISTINGS
+    ".x-pda-placements",       // promoted content
     ".x-rx-slot",              // promoted content
     ".x-rx-slot-btf",          // promoted content
     ".x-financing-info",       // financing offer
@@ -48,15 +49,12 @@
     ".x-evo-btf-river",        // content below item description
 
     // SEARCH
-    ".srp-river-answer[class*='CAROUSEL']:not([class*='NAVIGATION']",  // picked for you
+    ".srp-river-answer[class*='CAROUSEL']:not([class*='NAVIGATION'])",  // picked for you
     ".srp-main-below-river",                                           // related searches, recently viewed
 
     // OTHER
     ".m-product-tour",         // feature notices
-  ].join();
+  ].join(",");
 
-  const callback = () => document.querySelectorAll(selectors).forEach(e => { e.style.display = 'none' });
-  const observer = new MutationObserver(callback);
-
-  observer.observe(document, { childList: true, subtree: true });
+  GM_addStyle(selectors + " {display: none;}");
 })();
