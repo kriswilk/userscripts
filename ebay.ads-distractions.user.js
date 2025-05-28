@@ -2,7 +2,7 @@
 // @name         eBay - Hide Ads and Distractions
 // @description  Suppresses sponsored/promoted items, financing offers, reviews and other unsolicited content at eBay.
 // @author       Kris Wilk
-// @version      1.2
+// @version      1.3
 //
 // @namespace    https://github.com/kriswilk/userscripts
 // @homepage     https://github.com/kriswilk/userscripts
@@ -38,21 +38,36 @@
 
   const selectors = [
     // LISTINGS
-    ".x-pda-placements",       // promoted content
-    ".x-rx-slot",              // promoted content
-    ".x-rx-slot-btf",          // promoted content
-    ".x-financing-info",       // financing offer
-    ".d-payments-minview",     // financing offer
-    ".x-shop-with-confidence", // money back guarantee
-    ".x-evo-btf-river",        // content below item description
+    // promoted content
+    ".x-pda-placements",
+    ".x-rx-slot",
+    // additional services
+    ".vas-container",
+    // financing offers
+    ".x-financing-info",
+    ".x-financing-details",
+    ".d-payments-minview",
+    // money back guarantee
+    ".x-shop-with-confidence",
+    // content below item description
+    ".x-evo-btf-seller-card-river",
+    ".x-evo-btf-river",
 
     // SEARCH
-    ".srp-river-answer[class*='CAROUSEL']:not([class*='NAVIGATION'])",  // picked for you
-    ".srp-main-below-river",                                            // related searches, recently viewed
+    // picked for you, related, viewed
+    ".srp-river-answer[class*='ITEMS_CAROUSEL']",
+    ".srp-main-below-river",
 
     // OTHER
-    ".m-product-tour",         // feature notices
-    ".stream-slot",            // watchlist - similar items
+    // feature notices
+    ".m-product-tour",
+    // watchlist - similar items
+    ".stream-slot",
+    // footers
+    ".x-footer",
+    ".global-footer",
+    ".custom-footer",
+    ".footer-panel-container",
   ].join(",");
 
   document.querySelectorAll(selectors).forEach(e => e.remove());
