@@ -2,7 +2,7 @@
 // @name         eBay - Hide Ads and Distractions
 // @description  Suppresses sponsored/promoted items, financing offers, reviews and other unsolicited content at eBay.
 // @author       Kris Wilk
-// @version      1.4
+// @version      1.5
 //
 // @namespace    https://github.com/kriswilk/userscripts
 // @homepage     https://github.com/kriswilk/userscripts
@@ -50,7 +50,6 @@
     // money back guarantee
     ".x-shop-with-confidence",
     // content below item description
-    ".x-evo-btf-seller-card-river",
     ".x-evo-btf-river",
 
     // SEARCH
