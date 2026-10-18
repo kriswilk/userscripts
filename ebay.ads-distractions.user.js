@@ -67,6 +67,8 @@
     ".global-footer",
     ".custom-footer",
     ".footer-panel-container",
+    // ebay live
+    ".dp-live-events-carousel",
   ].join(",");
 
   document.querySelectorAll(selectors).forEach(e => e.remove());
